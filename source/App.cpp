@@ -29,45 +29,52 @@ int main()
         std::cout << "\t\t\tEnter your choice : ";
         std::cin >> choice;
         std::cin.get();
+        system("cls");
 
         if (choice == 1) {
             std::string description;
             int priority;
 
-            std::cout << "Enter your description : \n";
+            std::cout << "\t\t\tEnter your description : \n";
+            std::cout << "\t\t\t";
             std::getline(std::cin, description);
-            std::cout << "Enter task priority : (1 for lowest priority and 5 for highest priority) \n";
+            std::cout << "\t\t\tEnter task priority : (1 for lowest priority and 5 for highest priority) \n";
+            std::cout << "\t\t\t";
             std::cin >> priority;
 
             if (Add(description, priority)) {
-                std::cout << "Added successfully!" << std::endl;
+                std::cout << "\t\t\tAdded successfully!" << std::endl;
             }
         }
         else if (choice == 2) {
             List();
+            std::cout << "\t\t\t";
+            std::cin.get();
         }
         else if (choice == 3) {
-            if (listCount < 1) {
-                std::string description;
+            // if (listCount > 0) {
+            std::string description;
 
-                std::cout << "Enter the task you want to delete : \n";
-                std::getline(std::cin, description);
-                if (Delete(description)) {
-                    std::cout << "Deleted successfully!" << std::endl;
-                }
-                else {
-                    std::cout << "Description not found!" << std::endl;
-                }
+            std::cout << "\t\t\tEnter the task you want to delete : \n";
+            std::cout << "\t\t\t";
+            std::getline(std::cin, description);
+            if (Delete(description)) {
+                std::cout << "\t\t\tDeleted successfully!" << std::endl;
             }
             else {
-                std::cout << "List is empty!" << std::endl;
+                std::cout << "\t\t\tDescription not found!" << std::endl;
             }
+            // }
+            // else if (listCount <= 0){
+            //     std::cout << "\t\t\t" << listCount << std::endl;
+            //     std::cout << "\t\t\tList is empty!" << std::endl;
+            // }
         }
         else if (choice == 0) {
             break;
         }
         else {
-            std::cout << "Wrong input!" << std::endl;
+            std::cout << "\t\t\tWrong input!" << std::endl;
         }
     } while (choice != 0);
 
