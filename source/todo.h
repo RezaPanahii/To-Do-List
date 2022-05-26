@@ -7,7 +7,7 @@ static int listCount = 0;
 struct ToDo
 {
     std::string description;
-    std::string currentDate;
+    std::string current_date;
     int priority;
 };
 
