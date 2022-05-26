@@ -6,6 +6,7 @@
 bool Add(const std::string& desc, const int& priority);
 void List();
 bool Delete(const std::string& desc);
+bool Modify(const std::string& oldDesc, const std::string& newDesc);
 
 int main()
 {
@@ -69,6 +70,30 @@ int main()
             //     std::cout << "\t\t\t" << listCount << std::endl;
             //     std::cout << "\t\t\tList is empty!" << std::endl;
             // }
+        }
+        else if (choice == 4) {
+            std::string oldDesc;
+            std::string newDesc;
+
+            if (listCount > 0) {
+                std::cout << "\t\t\tEnter the task you want to modify : \n";
+                std::cout << "\t\t\t";
+                std::getline(std::cin, oldDesc);
+                std::cout << "\t\t\tEnter the new description : \n";
+                std::cout << "\t\t\t";
+                std::getline(std::cin, newDesc);
+
+                if (Modify(oldDesc, newDesc)) {
+                    std::cout << "Modification successful!" << std::endl;
+                }
+                else {
+                    std::cout << "Modification unsuccessful!" << std::endl;
+                }
+            }
+            else {
+                std::cout << "\t\t\t" << listCount << std::endl;
+                std::cout << "\t\t\tList is empty!" << std::endl;
+            }
         }
         else if (choice == 0) {
             break;
