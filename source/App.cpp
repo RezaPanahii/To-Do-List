@@ -28,7 +28,8 @@ int main()
         std::cout << "\n";
         std::cout << "\t\t\tEnter your choice : ";
         std::cin >> choice;
-        
+        std::cin.get();
+
         if (choice == 1) {
             std::string description;
             int priority;
@@ -41,20 +42,29 @@ int main()
             if (Add(description, priority)) {
                 std::cout << "Added successfully!" << std::endl;
             }
-        } else if (choice == 2) {
+        }
+        else if (choice == 2) {
             List();
         }
         else if (choice == 3) {
-            std::string description;
-            
-            std::cout << "Enter the task you want to delete : \n";
-            std::getline(std::cin, description);
-            if (Delete(description)) {
-                std::cout << "Deleted successfully!" << std::endl;
+            if (listCount < 1) {
+                std::string description;
+
+                std::cout << "Enter the task you want to delete : \n";
+                std::getline(std::cin, description);
+                if (Delete(description)) {
+                    std::cout << "Deleted successfully!" << std::endl;
+                }
+                else {
+                    std::cout << "Description not found!" << std::endl;
+                }
             }
             else {
-                std::cout << "Description not found!" << std::endl;
+                std::cout << "List is empty!" << std::endl;
             }
+        }
+        else if (choice == 0) {
+            break;
         }
         else {
             std::cout << "Wrong input!" << std::endl;
