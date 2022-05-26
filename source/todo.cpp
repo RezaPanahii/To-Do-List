@@ -25,14 +25,15 @@ bool Delete(const std::string& desc) {
                 ToDoList[i].priority = ToDoList[i + 1].priority;
             }
             listCount--;
-            return true;
             break;
         }
     }
     if (i == listCount) {
         return false;
     }
-
+    else {
+        return true;
+    }
 }
 void Modify();
 void List() {
