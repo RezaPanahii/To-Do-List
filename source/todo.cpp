@@ -3,7 +3,17 @@
 
 struct ToDo ToDoList[100];
 
-void Add();
+bool Add(const std::string& desc, const std::string& date, const int& priority) {
+    // if list is full
+    if (listCount < 101) {
+        ToDo y = { desc, date, priority };
+        ToDoList[listCount] = y;
+
+        listCount++;
+    } else {
+        return false;
+    }
+}
 void Delete();
 void Modify();
 void List() {
