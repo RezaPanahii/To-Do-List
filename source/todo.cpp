@@ -36,7 +36,22 @@ bool Delete(const std::string& desc) {
         return true;
     }
 }
-void Modify();
+bool Modify(const std::string& oldDesc, const std::string& newDesc) {
+    int i = 0;
+    for (; i < listCount; i++) {
+        if (oldDesc == ToDoList[i].description) {
+            ToDoList[i].description = newDesc;
+            return true;
+            break;
+        }
+    }
+    if (i == listCount) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 void List() {
     for (int i = 0; i < listCount; i++) {
         std::cout << "\t\t\tdescription : " << ToDoList[i].description << std::endl;
