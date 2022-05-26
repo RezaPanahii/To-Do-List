@@ -17,7 +17,8 @@ bool Add(const std::string& desc, const int& priority) {
     }
 }
 bool Delete(const std::string& desc) {
-    for (int i = 0; i < listCount; i++) {
+    int i = 0;
+    for (; i < listCount; i++) {
         if (desc == ToDoList[i].description) {
             for (int j = i; j < listCount - 1; j++) {
                 ToDoList[i].description = ToDoList[i + 1].description;
@@ -27,10 +28,11 @@ bool Delete(const std::string& desc) {
             return true;
             break;
         }
-        else {
-            return false;
-        }
     }
+    if (i == listCount) {
+        return false;
+    }
+
 }
 void Modify();
 void List() {
