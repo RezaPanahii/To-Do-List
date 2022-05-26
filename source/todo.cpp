@@ -10,11 +10,28 @@ bool Add(const std::string& desc, const int& priority) {
         ToDoList[listCount] = y;
 
         listCount++;
-    } else {
+        return true;
+    }
+    else {
         return false;
     }
 }
-void Delete();
+bool Delete(const std::string& desc) {
+    for (int i = 0; i < listCount; i++) {
+        if (desc == ToDoList[i].description) {
+            for (int j = i; j < listCount - 1; j++) {
+                ToDoList[i].description = ToDoList[i + 1].description;
+                ToDoList[i].priority = ToDoList[i + 1].priority;
+            }
+            listCount--;
+            return true;
+            break;
+        }
+        else {
+            return false;
+        }
+    }
+}
 void Modify();
 void List() {
     for (int i = 0; i < listCount; i++) {
