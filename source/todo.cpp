@@ -25,6 +25,7 @@ bool Delete(const std::string& desc) {
                 ToDoList[i].priority = ToDoList[i + 1].priority;
             }
             listCount--;
+            return true;
             break;
         }
     }
@@ -38,8 +39,8 @@ bool Delete(const std::string& desc) {
 void Modify();
 void List() {
     for (int i = 0; i < listCount; i++) {
-        std::cout << "description : " << ToDoList[i].description << std::endl;
-        std::cout << "priority : " << ToDoList[i].priority << std::endl;
-        std::cout << "" << std::endl;
+        std::cout << "\t\t\tdescription : " << ToDoList[i].description << std::endl;
+        std::cout << "\t\t\tpriority : " << ToDoList[i].priority << std::endl;
+        std::cout << "\t\t\t" << std::endl;
     }
 }
