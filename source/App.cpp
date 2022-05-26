@@ -1,11 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "task.h"
 
-void Add();
-void Delete();
-void Modify();
-void List();
 void Menu() {
     std::cout << "\n";
     std::cout << "\t\t\t----------------------------\n";
@@ -25,40 +22,7 @@ void Menu() {
 
 int main()
 {
-    // contact , add delete modify
-    int choice;
 
-    do {
-        Menu();
-        std::cout << "\n\t\t\tEnter your choice: ";
-        std::cin >> choice;
-
-        switch (choice) {
-        case 1:
-            Add();
-            break;
-
-        case 2:
-            List();
-            break;
-
-        case 3:
-            Delete();
-            break;
-
-        case 4:
-            Modify();
-            break;
-
-        default:
-            std::cout << "\t\t\tWring input!\n";
-            break;
-        }
-
-
-
-
-    } while (choice != 0);
-
+    // approach
     return 0;
 }
