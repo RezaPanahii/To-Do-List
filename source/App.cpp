@@ -3,7 +3,7 @@
 #include <fstream>
 #include "todo.h"
 
-bool Add(const std::string& desc, const std::string& date, const int& priority);
+bool Add(const std::string& desc, const int& priority);
 void List();
 
 int main()
@@ -30,17 +30,14 @@ int main()
 
         if (choice == 1) {
             std::string description;
-            std::string current_date;
             int priority;
 
             std::cout << "Enter your description : \n";
             std::getline(std::cin, description);
-            std::cout << "Enter your due date : \n";
-            std::getline(std::cin, current_date);
             std::cout << "Enter task priority : (1 for lowest priority and 5 for highest priority) \n";
             std::cin >> priority;
 
-            Add(description, current_date, priority);
+            Add(description, priority);
 
         } else if (choice == 2) {
             List();
